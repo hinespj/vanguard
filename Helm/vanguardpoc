@@ -38,3 +38,7 @@ OIDC Decoder Info:
 Issuer:        https://vanguardpoc.ping-devops.com
 Client ID:     PingLogon
 Client Secret: 2FederateM0re
+
+git add .
+git commit -m "Add new files"
+git push
