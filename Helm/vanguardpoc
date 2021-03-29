@@ -1,0 +1,40 @@
+helm install vanguardpoc --repo https://cprice-ping.github.io/helm-charts ping-sample-ciam -f vanguardpoc.yaml
+
+helm uninstall vanguardpoc
+Kubectl delete pvc/out-dir-vanguardpoc-pingdirectory-0
+Kubectl delete pvc/out-dir-vanguardpoc-pingfederate-admin-0
+
+
+https://console.pingone.com/?env=f03e6fac-bfb9-4ad7-8ac4-4275b5a10654&login_hint=c26e9271-1598-4238-a0ba-febe70ec6fb0#home?nav=home
+
+
+Enabled Capabilities:
+My Ping, Data Store, Authentication Authority, Adaptive Authentication
+
+Enabled Use Cases:
+Delegated Administration, Unified User Profiles
+
+Environment Name: vanguardpoc
+
+Product Consoles:
+My Ping:       https://console.pingone.com?env=fb45493a-afb5-4b3b-8db6-11e963778f0a#/home?nav=home
+
+PingData:      https://pingdataconsole-vanguardpoc.ping-devops.com
+PingFederate:  https://pingfederate-admin-vanguardpoc.ping-devops.com/pingfederate
+Delegator:     https://vanguardpoc.ping-devops.com/delegator/
+
+External Hostname:
+vanguardpoc.ping-devops.com
+
+Authentication Policy Samples:
+
+SAML (Single_Factor): https://vanguardpoc.ping-devops.com/idp/startSSO.ping?PartnerSpId=Sample-SAML
+OIDC (Single_Factor): https://vanguardpoc.ping-devops.com/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://decoder.pingidentity.cloud/oidc&scope=openid%20profile
+
+Sample Users:
+user.[0-4] | 2FederateM0re
+
+OIDC Decoder Info:
+Issuer:        https://vanguardpoc.ping-devops.com
+Client ID:     PingLogon
+Client Secret: 2FederateM0re

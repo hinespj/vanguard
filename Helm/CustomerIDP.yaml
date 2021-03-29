@@ -1,0 +1,89 @@
+global:
+  envs:
+    USER_BASE_DN: dc=sampleCiam.com
+    ENVIRONMENT_NAME: customeridp
+    DOMAIN_NAME: ping-devops.com
+  labels:
+    facile.pingidentity.cloud/admin-env-id: fb45493a-afb5-4b3b-8db6-11e963778f0a
+    facile.pingidentity.cloud/admin-user-id: 56aa77be-9442-40ab-b8c0-5d07c2849190
+pingOne:
+  envRegion: NA
+  administration:
+    useMyPing: true
+    envId: fb45493a-afb5-4b3b-8db6-11e963778f0a
+    adminUserId: 56aa77be-9442-40ab-b8c0-5d07c2849190
+    workerApp:
+      id: 99116941-f763-4e2e-a954-46ab0b28c977
+      secret: d1buEKz-BvBti_Svf2g8Zz.s0f~05gBpV7yLhwEzjTEv8Z6nt_yFSLZ5kyk.0hHs
+    pfLogonApp:
+      id: be103238-3186-40c8-9f4c-d6a392bd1d70
+      secret: qKZZpniAs5uR27p5aKRIAAgcYMjuLYxmun50RxVK8~p-iGKp7~7D0oZaAsBWYhxm
+    paLogonApp:
+      id: 29e6bbdb-3b9e-4a9c-a8e4-6f07e3466f80
+      secret: fDZeIxtZNGzN5opgTFsYc7uiOmHctgJ4JUgqjoAFcwF0NyT.HsTVjLME0xLhzMWA
+    pdLogonApp:
+      id: 29e6bbdb-3b9e-4a9c-a8e4-6f07e3466f80
+      secret: fDZeIxtZNGzN5opgTFsYc7uiOmHctgJ4JUgqjoAFcwF0NyT.HsTVjLME0xLhzMWA
+usePingConfig:
+  enabled: true
+baseline:
+  directory:
+    enabled: true
+capabilities:
+  authenticationAuthority:
+    enabled: true
+  multiFactorAuthentication:
+    enabled: false
+  accessManager:
+    enabled: false
+  dynamicAuthorization:
+    enabled: false
+  risk:
+    enabled: false
+  verify:
+    enabled: false
+useCases:
+  ciba:
+    enabled: false
+  consentManagement:
+    enabled: false
+  delegatedAdministration:
+    enabled: true
+  accessControl:
+    enabled: false
+  scim:
+    enabled: false
+  socialConnections:
+    enabled: false
+  userProfiles:
+    enabled: true
+  verifyDemoEnv:
+    enabled: false
+ping-devops:
+  pingfederate-admin:
+    enabled: true
+    workload:
+      type: StatefulSet
+  pingfederate-engine:
+    enabled: true
+    envs:
+      TAIL_LOG_FILES: /opt/out/instance/log/audit.log /opt/out/instance/log/server.log
+      PF_LOG_LEVEL1: DEBUG
+  pingdirectory:
+    enabled: true
+  pingdatasync:
+    enabled: false
+  pingaccess-admin:
+    enabled: false
+  pingaccess-engine:
+    enabled: false
+    envs:
+      TAIL_LOG_FILES: >-
+        /opt/out/instance/log/pingaccess_engine_audit.log
+        /opt/out/instance/log/pingaccess.log
+  pingdatagovernance:
+    enabled: false
+  pingdatagovernancepap:
+    enabled: false
+  pingdelegator:
+    enabled: true

@@ -1,0 +1,33 @@
+helm install customeridp --repo https://cprice-ping.github.io/helm-charts ping-sample-ciam -f CustomerIDP.yaml
+
+helm uninstall customeridp
+Kubectl delete pvc/out-dir-customeridp-pingdirectory-0
+Kubectl delete pvc/out-dir-customeridp-pingfederate-admin-0
+
+Enabled Use Cases:
+Delegated Administration, Unified User Profiles
+
+Environment Name: customeridp
+
+Product Consoles:
+My Ping:       https://console.pingone.com?env=fb45493a-afb5-4b3b-8db6-11e963778f0a#/home?nav=home
+
+PingData:      https://pingdataconsole-customeridp.ping-devops.com
+PingFederate:  https://pingfederate-admin-customeridp.ping-devops.com/pingfederate
+Delegator:     https://customeridp.ping-devops.com/delegator/
+
+External Hostname:
+customeridp.ping-devops.com
+
+Authentication Policy Samples:
+
+SAML (Single_Factor): https://customeridp.ping-devops.com/idp/startSSO.ping?PartnerSpId=Sample-SAML
+OIDC (Single_Factor): https://customeridp.ping-devops.com/as/authorization.oauth2?response_type=code&client_id=PingLogon&redirect_uri=https://decoder.pingidentity.cloud/oidc&scope=openid%20profile
+
+Sample Users:
+user.[0-4] | 2FederateM0re
+
+OIDC Decoder Info:
+Issuer:        https://customeridp.ping-devops.com
+Client ID:     PingLogon
+Client Secret: 2FederateM0re
